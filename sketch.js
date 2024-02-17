@@ -45,6 +45,7 @@ function setup() {
   fill(255);
   stroke(0);
   strokeWeight(4);
+  setInterval(classify, 500);
 }
 
 
@@ -53,7 +54,6 @@ function draw() {
   // Displays the image at its actual size at point (0,0)
   image(capture, 0, 0, width, height - labelHeight);
   if (modelOK) {
-    classify();
     text(label, 0 + textHorizPadding, height-labelHeight + textVertPadding, width, labelHeight);
   }
 }
